@@ -1,0 +1,26 @@
+# accept { x = (0 U 1)* | x ends with 1000 } 
+# for example    00011000
+# 'start' is the start state
+# 'accept' is the accept state
+# 'reject' is the reject state
+# algorithm is loop all the way to R end
+#        then move L checking for a match
+# NOTE 1: 'f' could be the accept state
+# NOTE 2: this general strategy works for many 'ends with' strings
+#   (but would not work with 'ends with '0000' because
+#    moving L at extreme L does not actually move L)
+start b c d e f accept reject
+0 1
+0 1 x _
+start
+accept
+reject
+start 0 start 0 R  loop on 0 and move R
+start 1 start 1 R  loop on 1 and move R
+start _ b _ L     
+b 0 c 0 L       
+c 0 d 0 L       
+d 0 e 0 L     
+e 1 f 1 R        
+f 0 accept 0 L     
+f _ accept _ L   

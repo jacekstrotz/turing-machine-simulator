@@ -1,0 +1,33 @@
+# accept 0n1n0n for n>0
+# for example    001100
+# a is the start state
+# accept is the accept state 
+# reject is the reject state
+a b c d e f g h i j k l m accept reject
+0 1
+0 1 A B C x y z _
+a
+accept
+reject
+a 0 b A R  found 0 -- so write A and move R
+b 0 b 0 R  loop over all 0's and move R
+b B b B R
+b 1 c B R
+c 1 c 1 R  loop over all 1's and move R
+c C c C R
+c 0 d C R
+d 0 e 0 L  now return to beginning and get another ABC
+d _ f _ L   now need to make certain that we have only A's B's and C's
+e C e C L
+e 1 e 1 L
+e B e B L
+e 0 e 0 L
+e A a A R
+f C f z L   change all C's to z
+f B f y L   change all B's to y
+f A f x L   change all B's to y
+f x g 0 R
+g x g 0 R
+g y g 1 R
+g z g 0 R
+g _ accept _ R    SUCCESS !!!

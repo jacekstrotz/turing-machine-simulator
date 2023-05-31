@@ -1,0 +1,57 @@
+# Convert decimal to reversed base 2
+# input format --- 'z' in front of a decimal number
+# output reversed base 2 number
+# then accept
+# algorithm
+# Repeat
+#     Sub 1 from base 10
+#     Add 1 base 2  (will be a reversed binary string)
+# Until base 10 is 0
+start start2 startLoop add1reversedBase2 checkResult checkResult2 increment returnToStartLoop endConvertToBase2 cleanTape accept reject
+0 1 2 3 4 5 6 7 8 9 z
+0 1 _ z # 2 3 4 5 6 7 8 9
+start
+accept
+reject
+start z start2 z R
+start2 0 start2 0 R
+start2 1 start2 1 R
+start2 2 start2 2 R
+start2 3 start2 3 R
+start2 4 start2 4 R
+start2 5 start2 5 R
+start2 6 start2 6 R
+start2 7 start2 7 R
+start2 8 start2 8 R
+start2 9 start2 9 R
+start2 _ startLoop # L  put '#' at the end
+startLoop 9 add1reversedBase2 8 R this is the main loop
+startLoop 8 add1reversedBase2 7 R
+startLoop 7 add1reversedBase2 6 R
+startLoop 6 add1reversedBase2 5 R
+startLoop 5 add1reversedBase2 4 R
+startLoop 4 add1reversedBase2 3 R
+startLoop 3 add1reversedBase2 2 R
+startLoop 2 add1reversedBase2 1 R
+startLoop 1 add1reversedBase2 0 R
+startLoop 0 startLoop 9 L
+startLoop z endConvertToBase2 _ R
+add1reversedBase2 0 add1reversedBase2 0 R
+add1reversedBase2 1 add1reversedBase2 1 R
+add1reversedBase2 2 add1reversedBase2 2 R
+add1reversedBase2 3 add1reversedBase2 3 R
+add1reversedBase2 4 add1reversedBase2 4 R
+add1reversedBase2 5 add1reversedBase2 5 R
+add1reversedBase2 6 add1reversedBase2 6 R
+add1reversedBase2 7 add1reversedBase2 7 R
+add1reversedBase2 8 add1reversedBase2 8 R
+add1reversedBase2 9 add1reversedBase2 9 R
+add1reversedBase2 # increment # R
+increment 0 returnToStartLoop 1 L
+increment 1 increment 0 R
+increment _ returnToStartLoop 1 L
+returnToStartLoop 0 returnToStartLoop 0 L
+returnToStartLoop 1 returnToStartLoop 1 L
+returnToStartLoop # startLoop # L
+endConvertToBase2 9 endConvertToBase2 _ R
+endConvertToBase2 # accept _ L

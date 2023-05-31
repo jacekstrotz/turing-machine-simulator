@@ -1,0 +1,22 @@
+a b c d e f g
+0 1 2
+0 1 2 x y z _
+a
+f
+g
+a 0 b x R
+a y e y R
+b 0 b 0 R
+b y b y R
+b 1 c y R
+c z c z R
+c 1 c 1 R
+c 2 d z L
+d 0 d 0 L
+d 1 d 1 L
+d y d y L
+d z d z L
+d x a x R
+e y e y R
+e z e z R
+e _ f _ L

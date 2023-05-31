@@ -1,0 +1,44 @@
+# move a binary string to the R the length of the string plus five spaces
+# for example    01 becomes _______01
+# for example    00011000 becomes _____________00011000
+# 'start' is the start state
+# 'accept' is the accept state
+# 'reject' is the reject state
+# algorithm 
+#
+#
+start b0 b1 b2 b3 b4 b5 c0 c1 c2 c3 c4 c5 loopToStart eraseAllXs accept reject
+0 1
+0 1 x _
+start
+accept
+reject
+start _ eraseAllXs _ L
+start 0 b0 x R 
+b0 0 b0 0 R
+b0 1 b0 1 R
+b0 _ b1 _ R
+b1 _ b2 _ R
+b2 _ b3 _ R
+b3 _ b4 _ R
+b4 _ b5 _ R
+b5 0 b5 0 R  skip over any previous 0s
+b5 1 b5 1 R  skip over any previous 1s
+b5 _ loopToStart 0 L
+start 1 c0 x R 
+c0 0 c0 0 R
+c0 1 c0 1 R
+c0 _ c1 _ R
+c1 _ c2 _ R
+c2 _ c3 _ R
+c3 _ c4 _ R
+c4 _ c5 _ R
+c5 0 c5 0 R  skip over any previous 0s
+c5 1 c5 1 R  skip over any previous 1s
+c5 _ loopToStart 1 L
+loopToStart 0 loopToStart 0 L
+loopToStart 1 loopToStart 1 L
+loopToStart _ loopToStart _ L
+loopToStart x start x R
+eraseAllXs x eraseAllXs _ L
+eraseAllXs _ accept _ R

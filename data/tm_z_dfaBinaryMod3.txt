@@ -1,0 +1,18 @@
+# Dfa acceptor for binary mod 3
+# input 'z' then binary string
+start zero one two accept reject
+0 1 z
+0 1 z _
+start
+accept
+reject
+start z zero z R
+zero 0 zero 0 R
+zero 1 one 1 R
+zero _ accept _ R
+one 0 two 0 R
+one 1 zero 1 R
+one _ reject _ R
+two 0 one 0 R
+two 1 two 1 R
+two _ reject _ R

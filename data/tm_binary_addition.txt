@@ -1,0 +1,90 @@
+a b c d e f g h i j k l m n o p q r s t accept reject
+0 1 + =
+0 1 + = _
+a
+accept
+reject
+a 0 b w R
+a 1 b z R mark beginning
+b 0 b 0 R
+b 1 b 1 R
+b + b + R
+b = c = R find equals
+c _ d 0 L write zero to the right
+d 0 d 0 L
+d 1 d 1 L
+d = d = L
+d + d + L
+d z e z L
+d w e w L
+e 0 f x R find zero, remove
+e w f w R
+e z g z R
+e 1 g y R find one, remove
+e + h - R find plus, remove
+e = o = R
+f 0 f 0 R
+f 1 f 1 R
+f + f + R
+f = i = R find equals
+i 0 i 0 R
+i 1 i 1 R
+i + i + R
+i _ j 0 L find blank, put 0
+j 0 j 0 L
+j 1 j 1 L
+j + j + L
+j = j = L
+j x e x R
+j y e y R
+j - e - R
+j z e z R
+j w e w R
+g 0 g 0 R
+g 1 g 1 R
+g + g + R
+g = k = R
+k 0 k 0 R
+k 1 k 1 R
+k + k + R
+k _ l 1 L
+l 0 l 0 L
+l 1 l 1 L
+l = l = L
+l + l + L
+l x e x R
+l y e y R
+l z e z R
+l w e w R
+l - e - R
+h 0 h 0 R
+h 1 h 1 R
+h = m = R
+m 0 m 0 R
+m 1 m 1 R
+m + m + R
+m _ j + L
+o 0 o 0 R
+o 1 o 1 R
+o + o + R
+o = o = R
+o _ p _ L
+p 0 p 1 L
+p 1 q 0 L
+p + s _ R
+s 1 s _ R
+s _ t _ L
+q 0 q 0 L
+q 1 q 1 L
+q + r + L
+r 1 r 0 L
+r 0 o 1 L
+t 0 t 0 L
+t 1 t 1 L
+t x t 0 L
+t y t 1 L
+t - t + L
+t _ t _ L
+t = t = L
+t z accept 1 L
+t w accept 0 L

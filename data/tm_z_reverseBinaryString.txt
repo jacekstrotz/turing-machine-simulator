@@ -1,0 +1,40 @@
+# reverse a binary string
+# input -- 'z' then binary string
+# output -- reversed binary string
+# algorithm
+# put # at end
+# repeat
+#   get last binary digit and change it to 'x'
+#   put that digit at right end
+# until z is reached
+# clean up tape
+start addHashAtRightEnd findNextBinaryDigit moveToLeftOfHash putZeroAtRightEnd putOneAtRightEnd cleanTape accept reject
+0 1 z
+0 1 z # _ x
+start
+accept
+reject
+start z addHashAtRightEnd z R
+addHashAtRightEnd 0 addHashAtRightEnd 0 R
+addHashAtRightEnd 1 addHashAtRightEnd 1 R
+addHashAtRightEnd _ moveToLeftOfHash # R
+moveToLeftOfHash _ moveToLeftOfHash _ L
+moveToLeftOfHash 0 moveToLeftOfHash 0 L
+moveToLeftOfHash 1 moveToLeftOfHash 1 L
+moveToLeftOfHash # findNextBinaryDigit # L
+findNextBinaryDigit x findNextBinaryDigit x L
+findNextBinaryDigit 0 putZeroAtRightEnd x R
+findNextBinaryDigit 1 putOneAtRightEnd x R
+findNextBinaryDigit z cleanTape _ R
+putZeroAtRightEnd x putZeroAtRightEnd x R
+putZeroAtRightEnd 0 putZeroAtRightEnd 0 R
+putZeroAtRightEnd 1 putZeroAtRightEnd 1 R
+putZeroAtRightEnd # putZeroAtRightEnd # R
+putZeroAtRightEnd _ moveToLeftOfHash 0 L
+putOneAtRightEnd x putOneAtRightEnd x R
+putOneAtRightEnd 0 putOneAtRightEnd 0 R
+putOneAtRightEnd 1 putOneAtRightEnd 1 R
+putOneAtRightEnd # putOneAtRightEnd # R
+putOneAtRightEnd _ moveToLeftOfHash 1 L
+cleanTape x cleanTape _ R
+cleanTape # accept _ R
