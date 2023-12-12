@@ -36,7 +36,31 @@ Each Turing Machine file is written as a series of predefined lines of code:
   ex. f
   
 **Line 7-∞**: The Delta function, in the form CURRENT_STATE CURRENT_CHARACTER NEXT_STATE CHARACTER_TO_WRITE DIRECTION
+
   ex. a 0 a 1 R (if at state 'a', and receive current input index '0', write '1' and travel right one character on input)
+  
   ex. a 1 a 0 L (if at state 'a', and receive current input index '1', write '0' and travel left one character on input)
 
 ## Example 
+To provide a better example of how this program works, here are some compiled Turing Machines and their results.
+
+### Example 1 - Check validity of the Turing Machine code and the provided inputs
+This program is designed using heavy pattern recognition to avoid errors in compilation or execution. 
+![Alt text](images/image1.png)
+
+### Example 2 - Binary addition
+Binary addition in a Turing Machine is a very complex algorithm. This optimized algorithm requires 22 states and 4 inputs for each state. In this case, we selected "Accepted strings" to only show the results of the execution.
+![Alt text](images/image2.png)
+
+### Example 3 - Binary addition (cont.)
+In this image, the output window outlines the current state, current input character, current input, current tape, and the position to which the tape is currently being read. 
+
+![Alt text](images/image3.png)
+
+### Example 4 - Move string to the right 5 spaces + length of the string
+This Turing Machine takes an input and shifts it right on the tape the length of the string and then 5 spaces. This could be used for a more complex algorithm that requires string modification.
+
+![Alt text](images/image4.png)
+
+## Conclusion
+Since Turing Machines are not physically possible (as a tape of infinite length can never exist), it is must easier to virtually demonstrate the capabilities of the Turing Machine. In this case, we do not have unlimited memory, but we can use memory management to pretend we do. Therefore, it is a great exercise to show the ability of these machines.
