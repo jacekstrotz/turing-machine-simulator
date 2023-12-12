@@ -63,4 +63,4 @@ This Turing Machine takes an input and shifts it right on the tape the length of
 ![Alt text](images/image4.png)
 
 ## Conclusion
-Since Turing Machines are not physically possible (as a tape of infinite length can never exist), it is must easier to virtually demonstrate the capabilities of the Turing Machine. In this case, we do not have unlimited memory, but we can use memory management to pretend we do. Therefore, it is a great exercise to show the ability of these machines.
+Since Turing Machines are not physically possible (as a tape of infinite length can never exist), it is much easier to virtually demonstrate the capabilities of the Turing Machine. In this case, we do not have unlimited memory, but we can use memory management to pretend we do. Therefore, it is a great exercise to show the ability of these machines.
