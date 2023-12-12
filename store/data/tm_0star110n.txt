@@ -1,0 +1,19 @@
+# accept 0*110n for n>2
+# for example    00011000
+# 'start' is the start state
+# 'accept' is the accept state
+# 'reject' is the reject state
+start b c d e f accept reject
+0 1
+0 1 x _
+start
+accept
+reject
+start 0 start 0 R  loop on 0 and move R
+start 1 b 1 R      on 1 move R
+b 1 c 1 R         on 1 move R
+c 0 d 0 R        on 0 move R
+d 0 e 0 R       on 0 move R
+e 0 f 0 R          on 0 move R
+f 0 f 0 R       loop on 0 and move R
+f _ accept _ L     on _ move L and accept

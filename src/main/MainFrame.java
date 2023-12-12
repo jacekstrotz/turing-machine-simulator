@@ -24,6 +24,7 @@ package main;
 import com.formdev.flatlaf.FlatDarkLaf;
 import java.io.File;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Arrays;
 import javax.swing.JOptionPane;
 import javax.swing.text.DefaultCaret;
@@ -32,6 +33,7 @@ public class MainFrame extends javax.swing.JFrame {
 
     TMThread th;
     TM t;
+    
     public MainFrame() {
         FlatDarkLaf.setup();
         initComponents();

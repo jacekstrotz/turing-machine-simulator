@@ -1,0 +1,64 @@
+# input format "z" followed by a decimal number
+# output accept only if the decimal number is
+# evenly divisible by 3
+# -- reject otherwise
+start start2 start3 start4 startLoop add1mod3 checkResult checkResult2 increment nextNum accept reject
+0 1 2 3 4 5 6 7 8 9 z
+0 1 _ z # 2 3 4 5 6 7 8 9
+start
+accept
+reject
+start z start2 z R
+start2 0 start2 0 R
+start2 1 start2 1 R
+start2 2 start2 2 R
+start2 3 start2 3 R
+start2 4 start2 4 R
+start2 5 start2 5 R
+start2 6 start2 6 R
+start2 7 start2 7 R
+start2 8 start2 8 R
+start2 9 start2 9 R
+start2 _ start3 # R  put '#' at the end
+start3 _ start4 0 L put 0 at the end
+start4 # startLoop # L
+startLoop 9 add1mod3 8 R this is the main loop
+startLoop 8 add1mod3 7 R
+startLoop 7 add1mod3 6 R
+startLoop 6 add1mod3 5 R
+startLoop 5 add1mod3 4 R
+startLoop 4 add1mod3 3 R
+startLoop 3 add1mod3 2 R
+startLoop 2 add1mod3 1 R
+startLoop 1 add1mod3 0 R
+startLoop 0 startLoop 9 L
+startLoop z checkResult z R
+add1mod3 0 add1mod3 0 R
+add1mod3 1 add1mod3 1 R
+add1mod3 2 add1mod3 2 R
+add1mod3 3 add1mod3 3 R
+add1mod3 4 add1mod3 4 R
+add1mod3 5 add1mod3 5 R
+add1mod3 6 add1mod3 6 R
+add1mod3 7 add1mod3 7 R
+add1mod3 8 add1mod3 8 R
+add1mod3 9 add1mod3 9 R
+add1mod3 # increment # R
+increment 0 nextNum 1 L
+increment 1 nextNum 2 L
+increment 2 nextNum 0 L
+nextNum # startLoop # L
+checkResult 9 checkResult 9 R
+checkResult 8 checkResult 8 R
+checkResult 7 checkResult 7 R
+checkResult 6 checkResult 6 R
+checkResult 5 checkResult 5 R
+checkResult 4 checkResult 4 R
+checkResult 3 checkResult 3 R
+checkResult 2 checkResult 2 R
+checkResult 1 checkResult 1 R
+checkResult 0 checkResult 0 R
+checkResult # checkResult2 # R
+checkResult2 0 accept 0 R
+checkResult2 1 reject 1 R
+checkResult2 2 reject 2 R

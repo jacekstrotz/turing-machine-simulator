@@ -1,0 +1,30 @@
+# accept 0n110n for n>1
+# for example    00011000
+# a is the start state
+# y is the accept state and z is the reject state
+a b c d e f g h i j k l m y z
+0 1
+0 1 x _
+a
+y
+z
+a 0 b x R  found 0 -- so write x and move R
+b 0 c 0 R  found a second 0 so we know n > 1 -- write 0 move R
+c 0 c 0 R  loop thru all 0s to the L of 11
+c 1 d 1 R  found first 1
+d 1 e 1 R  found second 1
+e 0 e 0 R  loop thru all 0s to the R of 11
+e _ f _ L  found _ at end of tape
+f 0 g x L  write x at the R end
+g 0 g 0 L  loop L
+g 1 g 1 L  loop L
+g x h x R  found x on L so move R
+h 0 i x R  found 0 so change it to x and move R
+i 0 i 0 R  loop R
+i 1 i 1 R  loop R
+i x j x L  found x on the R so now move L
+j 0 g x L  found 0 so change it to x and go back to L loop
+h 1 k 1 R
+k 1 l 1 R
+l x l x R
+l _ y _ R 
